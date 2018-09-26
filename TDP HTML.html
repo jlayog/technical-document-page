@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Jerel Layog">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Technical Document Page Project</title>
+        <meta name="description" content="A technical document page with navigational bar that takes you to different sections of the page when clicked.">
+      <link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+      <link href="CSS/tdp.css.css" rel="stylesheet">
+    </head>
+  <body>
+    
+    
+    <!--- Preface: I wanted to recreate the following webpage in a navbar style. Some content may be left out of the original, and may be INACCURATE. --->
+    <!--- ALL CONTENT BELONGS TO THE FOLLOWING WEBSITES https://developer.mozilla.org/en-US/docs/Glossary/JavaScript https://learn.freecodecamp.org/ --->
+      <nav id="navbar">
+        <header>JavaScript Documentation</header>
+          <ul>
+              <li><a class="navlink" href="#introduction">Introduction</a></li>
+              <li><a class="navlink" href="#things_you_should_know">Things You Should Know...</a></li>
+              <li><a class="navlink" href="#javascript_and_java">JavaScript and Java</a></li>
+              <li><a class="navlink" href="#hello_world">Executing your first "Hello World!"</a></li>
+              <li><a class="navlink" href="#variables">Variables</a></li>
+              <li><a class="navlink" href="#declaring_variables">Declaring Variables</a></li>
+              <li><a class="navlink" href="#data_structures">Data Structures</a></li>
+              <li><a class="navlink" href="#algorithms">Algorithms</a></li>
+              <li><a class="navlink" href="#if_else_statement">If and else statements</a></li>
+              <li><a class="navlink" href="#glossary">Glossary</a></li>         
+          </ul>
+        </nav>
+    
+    <main id="main-doc">
+      <section class="main-section" id="introduction">
+        <header>Introduction</header>
+        <article>
+          <p>JavaScript (JS) is a programming language mostly used to dynamically script webpages on the client side, but it is also often utilized on the server-side, using packages such as Node.js. JavaScript should not be confused with the Java programming language. Both "Java" and "JavaScript" are trademarks or registered trademarks of Oracle in the U.S. and other countries. However, the two programming languages are significantly different in their syntax, semantics, and uses.</p> 
+            <p>JavaScript itself is fairly compact yet very flexible. Developers have written a large variety of tools on top of the core JavaScript language, unlocking a vast amount of extra functionality with minimum effort. These include:</p>
+          
+          <li>Browser Application Programming Interfaces (APIs) — APIs built into web browsers, providing functionality like dynamically creating HTML and setting CSS styles, collecting and manipulating a video stream from the user's webcam, or generating 3D graphics and audio samples.</li> <!--- Without <ul> or <ol> it will appear as a bulleted list, recommended if you are not using too many bullets or points --->
+          <li>Third-party APIs to allow developers to incorporate functionality in their sites from other content providers, such as Twitter or Facebook.</li>
+          <li>Third-party frameworks and libraries you can apply to your HTML to allow you to rapidly build up sites and applications.</li>
+        </article>
+      </section>
+      
+      <section class="main-section" id="things_you_should_know">
+        <header>Things You Should Know...</header>
+        <article>
+          <p>This guide assumes you have the following basic background:</p>
+          <li>A general understanding of the Internet and the World Wide Web (WWW).</li>
+          <li>Good working knowledge of HyperText Markup Language (HTML).</li>
+          <li>Some programming experience. If you are new to programming, try one of the tutorials linked on the main page about JavaScript.</li>
+        </article>
+      </section>
+      
+      <section class="main-section" id="javascript_and_java">
+        <header>JavaScript and Java</header>
+        <article>
+          <p>JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript.</p>
+          <p>In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime system based on a small number of data types representing numeric, Boolean, and string values. JavaScript has a prototype-based object model instead of the more common class-based object model. The prototype-based model provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript also supports functions without any special declarative requirements. Functions can be properties of objects, executing as loosely typed methods.</p>
+          <p>JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classes, and methods. You do not have to be concerned with whether methods are public, private, or protected, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed.</p>
+          <p>Java is a class-based programming language designed for fast execution and type safety. Type safety means, for instance, that you can't cast a Java integer into an object reference or access private memory by corrupting Java bytecodes. Java's class-based model means that programs consist exclusively of classes and their methods. Java's class inheritance and strong typing generally require tightly coupled object hierarchies. These requirements make Java programming more complex than JavaScript programming.</p>
+          <p>In contrast, JavaScript descends in spirit from a line of smaller, dynamically typed languages such as HyperTalk and dBASE. These scripting languages offer programming tools to a much wider audience because of their easier syntax, specialized built-in functionality, and minimal requirements for object creation.</p>
+          <h1>JavaScript compared to Java</h1>
+          <div>
+            <!--- to make a table in html, the following code is used --->
+            <table style="width: 1200px;">
+                <tr> <!--- this tag is used to define a table row --->
+                  <th>JavaScript</th> <!--- this tag is used to define a table header --->
+                  <th>Java</th>
+              </tr>
+              <tr>
+                <td>Object-oriented. No distinction between types of objects. Inheritance is through the prototype mechanism, and properties and methods can be added to any object dynamically.</td> <!--- represents table data --->
+                <td>Class-based. Objects are divided into classes and instances with all inheritance through the class hierarchy. Classes and instances cannot have properties or methods added dynamically.</td>
+              </tr>
+              <tr>
+                <td>Variable data types are not declared (dynamic typing, loosely typed).</td>
+                <td>Variable data types must be declared (static typing, strongly typed).</td>
+              </tr>
+              <tr>
+                <td>Cannot automatically write to hard disk.</td>
+                <td>Can automatically write to hard disk.</td>
+              </tr>
+            </table>
+          </div>
+        </article>
+      </section>
+      
+      <section class="main-section" id="hello_world">
+        <article>
+          <header>Executing Your First "Hello World!"</header>
+          <p>JavaScript is one of the most lively web technologies, and as you start to get good at using it, your websites will enter a new dimension of power and creativity.</p>
+<p>However, becoming comfortable with JavaScript is a little harder than becoming comfortable with HTML and CSS. You may have to start small and keep working in small consistent steps. To start, we'll show how to add some basic JavaScript to your page, creating a "hello world!" example.</p>
+          <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:</p>
+          <code>
+            <!--- element defines a fragment of computer code. --->function greetMe(yourName) {
+              alert("Hello" + yourName);
+            }
+            
+            greetMe("World");
+          </code>
+          <p>Select the code in the pad and hit Ctrl+R to watch it unfold in your browser!</p>
+        </article>
+      </section>
+            
+            <section class="main-section" id="variables">
+              <article>
+                <header>Variables</header>
+                <p>A variable is a container for a value, like a number we might use in a sum, or a string that we might use as part of a sentence. But one special thing about variables is that their contained values can change.</p>
+                <p>if we didn't have variables available, we'd have to implement a giant code block that checked what the entered name was, and then display the appropriate message for that name. This is obviously really inefficient (the code is a lot bigger, even for only five choices), and it just wouldn't work — you couldn't possibly store all possible choices.</p>
+                <p>Variables just make sense, and as you learn more about JavaScript they will start to become second nature.</p>
+                <p>Another special thing about variables is that they can contain just about anything — not just strings and numbers. Variables can also contain complex data and even entire functions to do amazing things. You'll learn more about this as you go along.</p>
+              </article>
+      </section>
+      
+      <section class="main-section" id="declaring_variables">
+        <article>
+          <header>Declaring Variables</header>
+          <p>To use a variable you've first got to create it — more accurately, we call this declaring the variable. To do this, we type the keyword var followed by the name you want to call your variable:</p>
+          <code>
+            var myName;
+            var myAge;
+          </code>
+          <p>Here we're creating two variables called <kbd>myName</kbd> and <kbd>myAge</kbd>. Try typing these lines in now in your web browser's console, or in the below console (You can open this console in a separate tab or window if you'd prefer that). After that, try creating a variable (or two) with your own name choices.
+            <p>You can test whether these values now exist in the execution environment by typing just the variable's name, e.g.</p>
+          <code>
+            myName;
+            myAge;
+          </code>
+          <p>They currently have no value; they are empty containers. When you enter the variable names, you should get a value of <kbd>undefined</kbd> returned. If they don't exist, you'll get an error message — try typing in:</p>
+          <code>
+            scoopityPoop;
+          </code>
+        </article>
+      </section>
+      
+      <section class="main-section" id="data_structures"
+                
+            
+            
+            
+            
+            
+            
+            
+        
+          
+          
+                    
+              
+              

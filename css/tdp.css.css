@@ -1,0 +1,99 @@
+
+#navbar {
+  position: fixed; /* is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element. A fixed element does not leave a gap in the page where it would normally have been located. */
+  min-width: 290px;
+  top: 0px;
+  left: 0px;
+  width: 325px;
+  height: 100%;
+  border-right: solid;
+  border-color: gray;
+}
+
+header {
+  font-family: 'Arimo', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  font-size: 30px;
+}
+
+#main-doc header {
+  padding: 30px 15px 8px 15px;
+  margin-left: 35px;
+  text-align: left;
+}
+/* Remember that you can call different headers if it is under a different id, so it doesn't get confused with another header element */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #293249;
+    border-radius: 5px;
+    position: sticky;
+    left: 0;
+}
+
+.navlink {
+  font-family: 'Arimo', sans-serif;
+  color: white;
+  border-bottom: 1px solid white;
+  border-radius: 5px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-aligm: center;
+  padding: 14px 16px;
+  text-decoration: none
+}
+
+.main-section {
+  display: block;
+  padding-left: 350px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-align: left;
+  line-height: 23px; /*spaced out the paragraphs and bullets because they appeared too close together */
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 1px;
+  font-size: 16px;
+  position: relative;
+  left: 150px;
+}
+
+table, th, td {
+  background: #d8dbe1;
+  border: 1px solid white;
+  border-collapse: collapse; /* erases the thick borders in the previous code */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+  background: #a9b0c1;
+  padding: 5px;
+}
+
+td {
+  padding: 7px;
+}
+
+code {
+  display: block;
+  white-space: pre; /* Defines preformatted text */
+  background-color: #d8dbe1;
+  line-height: 2;
+  margin: auto;
+  border-radius: 5px;
+  max-width: 50%;
+}
