@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Technical Document Page Project</title>
         <meta name="description" content="A technical document page with navigational bar that takes you to different sections of the page when clicked.">
+        <link rel="stylesheet"  href="css/tdp.css">
       <link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-      <link href="css/tdp.css" rel="stylesheet">
     </head>
   <body>
     
     
     <!--- Preface: I wanted to recreate the following webpage in a navbar style. Some content may be left out of the original, and may be INACCURATE. --->
-    <!--- ALL CONTENT BELONGS TO THE FOLLOWING WEBSITES https://developer.mozilla.org/en-US/docs/Glossary/JavaScript https://learn.freecodecamp.org/ --->
+    <!--- ALL CONTENT BELONGS TO THE FOLLOWING WEBSITES https://developer.mozilla.org/en-US/docs/Glossary/JavaScript --->
       <nav id="navbar">
         <header>JavaScript Documentation</header>
           <ul>
@@ -24,9 +24,9 @@
               <li><a class="navlink" href="#hello_world">Executing your first "Hello World!"</a></li>
               <li><a class="navlink" href="#variables">Variables</a></li>
               <li><a class="navlink" href="#declaring_variables">Declaring Variables</a></li>
-              <li><a class="navlink" href="#data_structures">Data Structures</a></li>
-              <li><a class="navlink" href="#algorithms">Algorithms</a></li>
-              <li><a class="navlink" href="#if_else_statement">If and else statements</a></li>
+              <li><a class="navlink" href="#functions">Functions</a></li>
+              <li><a class="navlink" href="#loops">Looping Code</a></li>
+              <li><a class="navlink" href="#data_types">Data Types</a></li>
               <li><a class="navlink" href="#glossary">Glossary</a></li>         
           </ul>
         </nav>
@@ -135,18 +135,109 @@
         </article>
       </section>
       
-      <section class="main-section" id="data_structures"
-                
+      <section class="main-section" id="functions">
+        <article>
+          <header>Functions</header>
+          <p>The custom function we are going to build will be called displayMessage(). It will display a custom message box on a web page and will act as a customized replacement for a browser's built-in alert() function. We've seen this before, but let's just refresh our memories. Type the following in your browser's JavaScript console, on any page you like:</p>
+          <code>
+            alert('This is a message');
+          </code>
+          <p>The <kbd>alert</kbd> function takes a single argument — the string that is displayed in the alert box. Try varying the string to change the message.
+
+            The <kbd>alert</kbd> function is limited: you can alter the message, but you can't easily vary anything else, such as the color, icon, or anything else.</p>
+        </article>
+      </section>
+      
+      <section class="main-section" id="loops">
+        <article>
+          <header>Looping Code</header>
+              <p>Loops, loops, loops. As well as being associated with popular breakfast cereals, roller coasters and musical production, they are also a critical concept in programming. Programming loops are all to do with doing the same thing over and over again — which is termed iteration in programming speak.</p>
+          <p>Let's start exploring some specific loop constructs. The first, which you'll use most of the time, is the for loop — this has the following syntax:</p>
+          <code>
+            for (initializer; exit-condition; final-expression) {
+            // code to run
+            }
+          </code>
+          <p>Here we have:</p>
+          <ol>
+            <li>The keyword for, followed by some parentheses.</li>
+            <li>Inside the parentheses we have three items, separated by semi-colons:</li>
+            <ol> 
+              <li>An initializer — this is usually a variable set to a number, which is incremented to count the number of times the loop has run. It is also sometimes referred to as a counter variable.</li>
+              <li>An exit-condition — as mentioned before, this defines when the loop should stop looping. This is generally an expression featuring a comparison operator, a test to see if the exit condition has been met.</li>
+            <li>A final-expression — this is always evaluated (or run) each time the loop has gone through a full iteration. It usually serves to increment (or in some cases decrement) the counter variable, to bring it closer to the exit condition value.</li>
+            </ol>
+            <li>Some curly braces that contain a block of code — this code will be run each time the loop iterates.</li>
+            <p>Let's look at a real example so we can visualize what these do more clearly.
+            <code>
+              var cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
+              var info = 'My cats are called ';
+              var para = document.querySelector('p');
+
+              for (var i = 0; i < cats.length; i++) {
+               info += cats[i] + ', ';
+              }
+
+              para.textContent = info;
+            </code>
+              <p>This gives us the following output:</p>
+              <code>
+                My cats are called Bill, Jeff, Pete, Biggles, Jasmin,
+              </code>
+              <p>This shows a loop being used to iterate over the items in an array and do something with each of them — a very common pattern in JavaScript. Here:</p>
+              <ol>
+                <li>The iterator, i, starts at <kbd>0 (var i = 0)</kbd>.</li>
+                <li>It has been told to run until it is no longer smaller than the length of the cats array. This is important — the exit condition shows the condition under which the loop will still run. So in this case, while i <kbd> cats.length</kbd> is still true, the loop will still run.</li>
+                <li>Inside the loop, we concatenate the current loop item <kbd>(cats[i]</kbd> is <kbd>cats[whatever i is at the time])</kbd> along with a comma and a space, onto the end of the info variable. So:
+                  <ol>
+                    <li>During the first run, <kbd>i = 0, so cats[0] + ', '</kbd> will be concatenated onto info ("Bill, ").</li>
+                    <li>During the second run, <kbd>i = 1</kbd>, so <kbd>cats[1] + ', '</kbd> will be concatenated onto info ("Jeff, ")</li>
+                    <li>And so on. After each time the loop has run, 1 will be added to <kbd>i (i++)</kbd>, then the process will start again.</li>
+                  </ol>
+                <li>When <kbd>i</kbd> becomes equal to <kbd>cats.length</kbd>, the loop will stop, and the browser will move on to the next bit of code below the loop.</li>
+            </ol>
+            <p>One small problem we are left with is that the final output sentence isn't very well-formed:</p>
+            <code>
+              My cats are called Bill, Jeff, Pete, Biggles, Jasmin,
+            </code>
+            <p>Ideally we want to change the concatenation on the final loop iteration so that we haven't got a comma on the end of the sentence. Well, no problem — we can quite happily insert a conditional inside our for loop to handle this special case:</p>
+            <code>
+              for (var i = 0; i < cats.length; i++) {
+              if (i === cats.length - 1) {
+                info += 'and ' + cats[i] + '.';
+               } else {
+                  info += cats[i] + ', ';
+               }
+              }                             
+              </code>
+              </article>
+            </section>
             
-            
-            
-            
-            
-            
-            
-        
+            <section class="main-section" id="data_types">
+              <article>
+                <header>Data Types</header>
+              <p>The latest ECMAScript standard defines seven data types</p>
+              <p>Six data types that are primitives</p>
+              <ul>
+                <li>Boolean. true and false.</li>
+                <li>null. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is not the same as Null, NULL, or any other variant.</li>
+                <li>undefined. A top-level property whose value is undefined.</li>
+                <li>Number. 42 or 3.14159.</li>
+                <li>String. "Howdy"</li>
+                <li>Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.</li>
+                <li>and Object</li>
+              </ul>
+              <p>Although these data types are a relatively small amount, they enable you to perform useful functions with your applications. Objects and functions are the other fundamental elements in the language. You can think of objects as named containers for values, and functions as procedures that your application can perform.</p>
+              </article>
+          </section>
           
-          
-                    
-              
-              
+          <section class="main-section" id="glossary">
+            <article>
+              <header>Glossary</header>
+              All the documentation in this page is taken from <a class="redirect" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">MDN</a>
+              </article>
+                </section>
+        </main>
+    </body>
+</html>
+      
